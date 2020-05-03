@@ -19,7 +19,7 @@ app.config.update(
     MAIL_PASSWORD = params['pass']
 )
 mail = Mail(app)
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
