@@ -19,7 +19,7 @@ app.config.update(
     MAIL_PASSWORD = params['pass']
 )
 mail = Mail(app)
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
@@ -58,7 +58,7 @@ class Form(db.Model):
     day = db.Column(db.Integer, nullable=False)
 
     def __init__(self, first_name, last_name, year, month, day):
-        self.first_namefirst_name =first_name
+        self.first_name =first_name
         self.last_name = last_name
         self.year =year  
         self.month = month 
