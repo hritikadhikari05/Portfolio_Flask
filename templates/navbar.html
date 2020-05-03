@@ -20,7 +20,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -30,7 +30,7 @@
           Dropdown
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="/contact">Contacts</a>
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -53,11 +53,7 @@
   <hr>
   <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
 </div>
-    <Html>
-<Head><title>form</title></head>
-<body text="800080">
-<font face="Lucida Calligraphy">
-<form action="" method="post">
+<form name="sentMessage" id="admissonform" action="/form" method= "post" novalidate>
 <hr>
 <div class="text text-primary"><h2>Admission Form</h2></h1></div><br>
 First Name: <input type="text" name="fname">
@@ -133,12 +129,13 @@ Name of Previous School: <input type="text" size="40" name="cname"><br><br>
 <input type="checkbox" name="acc">Accountancy<br>
 <input type="checkbox" name="eco">Economics<br>
 <input type="checkbox" name="bmat">Business Mathematics<br><br>
-<a href="hritik.adhikari123@gmail.com">Submit this form</a><br><br><br>
+<div class="form-group">
+  <button type="submit" class="btn btn-primary" id="sendMessage">Send</button>
+</div>
+
 <input type="reset" value="clear all">
 </form>
-</font>
-</body>
-</html>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

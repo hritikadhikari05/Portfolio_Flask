@@ -1,0 +1,23 @@
+{
+"params":
+{
+    "local_server":"True",
+    "local_url": "mysql://root:@localhost/coding",
+    "prod_url": "mysql://root:@localhost/coding",
+    "fb_url": "http://facebook.com/hritikadhikari",
+    "twt_url": "http://twitter.com/hritikadhikari3",
+    "user": "hritikadhikari05@gmail.com",
+    "pass": "9865103845H",
+    "reciever": "hritik.adhikari123@gmail.com"
+},
+
+"info":
+{
+    "title": "Coding News",
+    "top_heading": "Coding News",
+    "heading": "Coding blogs",
+    "sub_heading": "All about coding news"
+
+}
+
+}

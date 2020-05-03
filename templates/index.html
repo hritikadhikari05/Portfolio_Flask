@@ -1,111 +1,53 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends "layout.html" %}
+{% block body %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static' ,filename ='img/home-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{info.heading}}</h1>
+            <span class="subheading">{{info.sub_heading}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-
-    <Html>
-<Head><title>form</title></head>
-<body text="800080">
-<font face="Lucida Calligraphy">
-<form action="" method="post">
-<h1>United Academy</h1>
-<h4>Kumaripati, Lalitpur</h4>
-<hr>
-<div class="text text-primary"><h2>Admission Form</h2></h1></div><br>
-First Name: <input type="text" name="fname">
-Last Name: <input type="text" name="lname"><br><br>
-Date Of Birth: <br>
-Year: <select name="year">
-<Option >Year
-<Option>1991
-<Option>1992
-<Option>1993
-<Option>1994
-<Option>1995
-<Option>1996
-<Option>1997
-<Option>1998
-<Option>1999
-<Option>2000
-<Option>2001
-<Option>2002
-</select>
-Month: <select name="mth">
-<Option>Month
-<Option>1
-<Option>2
-<Option>3
-<Option>4
-<Option>5
-<Option>6
-<Option>7
-<Option>8
-<Option>9
-<Option>10
-<Option>11
-<Option>12
-</select>
-Day: <select name="day">
-<Option>Day
-<Option>1
-<Option>2
-<Option>3
-<Option>4
-<Option>5
-<Option>6
-<Option>7
-<Option>8
-<Option>9
-<Option>10
-<Option>11
-<Option>29
-<Option>30
-<Option>31
-</select>&nbsp; &nbsp; &nbsp; &nbsp;
-Gender: <input type="radio" name="optn" value="Male" checked>Male
-<input type="radio" name="optn" value="Fmale" checked>Female
-<Br><br>
-Father's Name: <input type="text" name="father">
-Mother's Name: <input type="text" name="mother"><br><br>
-Address: <input type="text" size="50" name="add"><br><br>
-Class: <input type="radio" name="optn" value="xi" checked>XI
-<input type="radio" name="optn" value="xii">XII<br><br>
-Faculty: <input type="radio" name="fac" value="sci" checked>Science
-<input type="radio" name="fac" value="com">Commerce
-<input type="radio" name="fac" value="hum">Humanities <br><br>
-Name of Previous School: <input type="text" size="40" name="cname"><br><br>
-<h3 class="text text-primary">Select Your Subjects</h3>
-<input type="checkbox" name="eng">English<br>
-<input type="checkbox" name="phy">Physics<br>
-<input type="checkbox" name="chem">Chemistry<br>
-<input type="checkbox" name="bio">Biology<br>
-<input type="checkbox" name="comp">Computer<br>
-<input type="checkbox" name="cmat">C.Mathematics<br>
-<input type="checkbox" name="omat">O.Mathematics<br>
-<input type="checkbox" name="acc">Accountancy<br>
-<input type="checkbox" name="eco">Economics<br>
-<input type="checkbox" name="bmat">Business Mathematics<br><br>
-<a href="hritik.adhikari123@gmail.com">Submit this form</a><br><br><br>
-<input type="reset" value="clear all">
-</form>
-</font>
-</body>
-</html>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
-</html>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+    <!-- Todo: Fetch it using for loops from the database -->  
+    {% for post in posts %}
+        
+        <div class="post-preview">
+          <a href="/post/{{post.slug}}">
+            <h2 class="post-title">
+             {{post.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              Please add Subtitle here.
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">Hritik_Adhikari</a>
+            {{post.Date}}</p>
+        </div>
+        {{post.content[0:40]}}
+        <hr>
+        {% endfor %}
+        
+    
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+  

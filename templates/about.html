@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>About me</title>
-</head>
-<body>
-	<h1>Introduction</h1>
-	My name is {{ name2 }}. I live in country Nepal.<br>
-	<h1>Interests</h1>
-	<p>My hobbibes are programming best intrest, hacking, listening music.</p>
+{% extends "layout.html" %}
+{% block body %}
 
-</body>
-</html>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static' ,filename ='img/about-bg.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Well, My name is Hritik Adhikari. I am 19years old boy. I am form country Nepal. I am a post graduate student studying in Kathmandu,Nepal. I like desigining Websites. <br>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}
