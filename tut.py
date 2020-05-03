@@ -20,12 +20,16 @@ app.config.update(
 )
 mail = Mail(app)
 if (local_server):
+     app.debug = True
      app.config['SQLALCHEMY_DATABASE_URI'] = params['local_url']
 else:
+    app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_url']
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Contacts(db.Model):
+    __tablename__ = 'contacts'
     sno = db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(50), nullable=False)
     Email = db.Column(db.String(50), nullable=False)
@@ -33,7 +37,16 @@ class Contacts(db.Model):
     Message = db.Column(db.String(12), nullable=False)
     Date = db.Column(db.String(120), nullable=True)
 
+    def __init__(self, Name, Email, Phone, Message, Date):
+        self.Name = Name
+        self.Email = Email
+        self.Phone = Phone  
+        self.Message = Message 
+        self.Date = Date
+
+
 class Form(db.Model):
+    __tablename__ = 'form'
     sno = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
@@ -41,13 +54,28 @@ class Form(db.Model):
     month = db.Column(db.Integer, nullable=False)
     day = db.Column(db.Integer, nullable=False)
 
+    def __init__(self, first_name, last_name, year, month, day):
+        self.first_namefirst_name =first_name
+        self.last_name = last_name
+        self.year =year  
+        self.month = month 
+        self.day = day
+
 class Posts(db.Model):
+    __tablename__ = 'posts'
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), nullable=False)
     slug = db.Column(db.String(25), nullable=False)
     content = db.Column(db.String(120), nullable=False)
     date = db.Column(db.String(12), nullable=True)
     img_file = db.Column(db.String(120), nullable=False)
+
+    def __init__(self, title, slug, content, date, img_file):
+        self.title = title
+        self.slugslug =slug
+        self.content =content  
+        self.date =date 
+        self.img_file =img_file
     
 
 
@@ -98,5 +126,8 @@ def form():
         entry = Form(first_name = fname , last_name = lname , year = year , month = month , day = day)
         db.session.add(entry)
         db.session.commit()
-        return render_template("navbar.html" ,params = params , info = info )
-app.run(debug=True)
+    return render_template("navbar.html" ,params = params , info = info )
+if __name__ == '__main__':
+
+    app.debug = True
+    app.run()

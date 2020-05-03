@@ -1,9 +1,9 @@
 {
 "params":
 {
-    "local_server":"True",
-    "local_url": "mysql://root:@localhost/coding",
-    "prod_url": "mysql://root:@localhost/coding",
+    "local_server":"False",
+    "local_url": "postgresql://postgres:9865103845H@localhost/coding",
+    "prod_url": "postgres://ttokegoalutuod:0391c8ba2b45d6b15589a971bd866586d6f34bc491a43d5b2bcd4d11974ab13b@ec2-34-195-169-25.compute-1.amazonaws.com:5432/d7bmja8ncjpo67",
     "fb_url": "http://facebook.com/hritikadhikari",
     "twt_url": "http://twitter.com/hritikadhikari3",
     "user": "hritikadhikari05@gmail.com",
