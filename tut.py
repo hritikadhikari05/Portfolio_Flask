@@ -37,8 +37,8 @@ class Contacts(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(50), nullable=False)
     Email = db.Column(db.String(50), nullable=False)
-    Phone = db.Column(db.String(13), nullable=False)
-    Message = db.Column(db.String(12), nullable=False)
+    Phone = db.Column(db.String(15), nullable=False)
+    Message = db.Column(db.String(1200), nullable=False)
     Date = db.Column(db.String(120), nullable=True)
 
     def __init__(self, Name, Email, Phone, Message, Date):
@@ -68,10 +68,10 @@ class Form(db.Model):
 class Posts(db.Model):
     __tablename__ = 'posts'
     sno = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), nullable=False)
-    slug = db.Column(db.String(25), nullable=False)
-    content = db.Column(db.String(120), nullable=False)
-    date = db.Column(db.String(12), nullable=True)
+    title = db.Column(db.String(800), nullable=False)
+    slug = db.Column(db.String(200), nullable=False)
+    content = db.Column(db.String(1500), nullable=False)
+    date = db.Column(db.String(30), nullable=True)
     img_file = db.Column(db.String(120), nullable=False)
 
     def __init__(self, title, slug, content, date, img_file):
