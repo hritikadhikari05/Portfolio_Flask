@@ -19,15 +19,16 @@ app.config.update(
     MAIL_PASSWORD = params['pass']
 )
 mail = Mail(app)
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
-    app.debug = True
+    app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_url']
-else:
-    app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_url']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+else:
+    app.debug = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_url']
+    
 
 db = SQLAlchemy(app)
 
