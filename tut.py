@@ -11,14 +11,14 @@ with open('config.json', 'r') as d:
 local_server = "True"
 
 app = Flask(__name__)
-app.config.update(
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = '465',
-    MAIL_USE_SSL = True,
-    MAIL_USERNAME = params['user'],
-    MAIL_PASSWORD = params['pass']
-)
-mail = Mail(app)
+# app.config.update(
+#     MAIL_SERVER = 'smtp.gmail.com',
+#     MAIL_PORT = '465',
+#     MAIL_USE_SSL = True,
+#     MAIL_USERNAME = params['user'],
+#     MAIL_PASSWORD = params['pass']
+# )
+# mail = Mail(app)
 ENV = 'prod'
 
 if ENV == 'dev':
@@ -114,7 +114,7 @@ def contact():
         entry = Contacts(Name = name , Email = email , Phone = phone , Message = message , Date = datetime.now())
         db.session.add(entry)
         db.session.commit()
-        mail.send_message('New message from Blog' , sender= name  , body = message , recipients = [params['user']]  )
+        # mail.send_message('New message from Blog' , sender= name  , body = message , recipients = [params['user']]  )
     return render_template("contact.html" ,params = params, info = info)
 
 
