@@ -88,7 +88,7 @@ class Posts(db.Model):
 @app.route('/')
 def home():
     
-    posts = Posts.query.filter_by().all()[0:2]
+    posts = Posts.query.filter_by().all()
     return render_template('index.html' ,params = params ,info = info , posts=posts)
 
 @app.route("/post/<string:post_slug>", methods=['GET'])

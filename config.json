@@ -4,7 +4,7 @@
     "local_server":"False",
     "local_url": "postgresql://postgres:9865103845H@localhost/coding",
     "prod_url": "postgres://kejonutjzsezbq:6270b8c419d91ea8efde7a943e378bca066081d619d3aed543aa6fc4a8a80f4a@ec2-34-195-169-25.compute-1.amazonaws.com:5432/d4s9m2c1q68nt",
-    "fb_url": "http://facebook.com/hritikadhikari",
+    "fb_url": "https://www.facebook.com/profile.php?id=100008299360694",
     "twt_url": "http://twitter.com/hritikadhikari3",
     "user": "hritikadhikari05@gmail.com",
     "pass": "9865103845H",
@@ -13,10 +13,11 @@
 
 "info":
 {
-    "title": "Coding News",
-    "top_heading": "Coding News",
-    "heading": "Coding blogs",
-    "sub_heading": "All about coding news"
+    "title": "My Blogs",
+    "top_heading": "My Blogs",
+    "heading": "Blogs",
+    "sub_heading": "All about my blogs",
+    "about_me": "Well, My name is Hritik Adhikari. I am 19years old boy. I am form country Nepal. I am a post graduate student studying in Kathmandu,Nepal. I like desigining Websites.I work on python programming languages. "
 
 }
 
