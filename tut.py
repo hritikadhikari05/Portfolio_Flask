@@ -25,7 +25,7 @@ if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_url']
 else:
-    app.debug = False
+    app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_url']
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
