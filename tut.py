@@ -21,7 +21,7 @@ app.secret_key = 'super-secret key'
 #     MAIL_PASSWORD = params['pass']
 # )
 # mail = Mail(app)
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
