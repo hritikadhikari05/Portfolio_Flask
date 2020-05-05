@@ -22,7 +22,9 @@
     "user_name": "hritik",
     "password": "1234",
     "dashboard_heading": "Welcome Boss",
-    "dashboard_subheading": "You Can Add/Edit/Delete Posts Here"
+    "dashboard_subheading": "You Can Add/Edit/Delete Posts Here",
+    "edit_heading": "You Can Edit Posts Here",
+    "edit_subheading": "Press Edit Button to edit"
 
 }
 
