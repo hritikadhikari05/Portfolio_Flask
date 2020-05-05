@@ -137,12 +137,13 @@ def edit(sno):
             box_title = request.form.get('title')
             box_slug = request.form.get('slug')
             box_content = request.form.get('content')
-            box_image = request.form.get('image')
             date = datetime.now()
+            box_image = request.form.get('image')
             
-            if (sno == '0' ):
-                enter = Posts(title = box_title , slug = box_slug , content = box_content , img_file = box_image , date = date)
-                db.session.add(enter)
+            
+            if sno == '0' :
+                post = Posts(title = box_title , slug = box_slug , content = box_content , date = date,  img_file = box_image )
+                db.session.add(post)
                 db.session.commit()
 
             else:
@@ -157,7 +158,7 @@ def edit(sno):
 
         post = Posts.query.filter_by(sno=sno).first()
 
-        return render_template("edit.html" ,params = params ,info = info, post =post)
+        return render_template("edit.html" ,params = params ,info = info, post =post, sno=sno)
 
 
 @app.route("/delete/<string:sno>", methods = ['GET' , 'POST'])

@@ -23,13 +23,14 @@
 <h1>Add/Edit Posts</h1>
 
 
-<form name="sentMessage" id="Edit" action="/edit/{{post.sno}}" method= "post" novalidate>
+<form name="sentMessage" id="Edit" action="/edit/{{sno}}" method= "post" novalidate>
         
   <input class="form-control form-control-lg" type="text" id ="title" name ="title" placeholder="Add Title Here" value = "{{post.title}}">
   <input class="form-control form-control-lg" type="text" id ="slug" name ="slug" placeholder="SLUG" value = "{{post.slug}}">
 
-
-  <textarea rows="5" class="form-control form-control-lg" placeholder="Content" name="content" id="content" required data-validation-required-message="Please enter a message."></textarea>
+<input class="form-control form-control-lg" type="text" id ="image" name ="content" placeholder="Content" 
+value= "{{post.content}}">
+  
 
 
   <input class="form-control form-control-lg" type="text" id ="image" name ="image" placeholder="IMAGE" value = "{{post.img_file}}">
