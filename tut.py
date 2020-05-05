@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session,redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail
 import json
+from send_mail import send_mail
 from datetime import datetime
 
 with open('config.json', 'r') as c:
@@ -20,7 +21,7 @@ app.secret_key = 'super-secret key'
 #     MAIL_PASSWORD = params['pass']
 # )
 # mail = Mail(app)
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
@@ -180,6 +181,7 @@ def contact():
         entry = Contacts(Name = name , Email = email , Phone = phone , Message = message , Date = datetime.now())
         db.session.add(entry)
         db.session.commit()
+        send_mail(name, email, message, phone)
         # mail.send_message('New message from Blog' , sender= name  , body = message , recipients = [params['user']]  )
     return render_template("contact.html" ,params = params, info = info)
 

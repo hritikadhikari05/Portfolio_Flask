@@ -17,10 +17,12 @@
     "top_heading": "My Blogs",
     "heading": "Blogs",
     "sub_heading": "All about my blogs",
-    "about_me": "Well, My name is Hritik Adhikari. I am 19years old boy. I am form country Nepal. I am a under graduate student studying in Kathmandu,Nepal. I like desigining Websites.I work on python programming languages. ",
+    "about_me": "Well, My name is Hritik Adhikari. I am 19years old boy. I am form Nepal. I am a undergraduate student studying in Kathmandu,Nepal. I like desigining Websites.I work on python programming languages. ",
     "img_path": "blog3.svg",
     "user_name": "hritik",
-    "password": "1234"
+    "password": "1234",
+    "dashboard_heading": "Welcome Boss",
+    "dashboard_subheading": "You Can Add/Edit/Delete Posts Here"
 
 }
 
