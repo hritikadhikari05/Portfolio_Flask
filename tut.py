@@ -80,11 +80,13 @@ class Posts(db.Model):
 
     def __init__(self, title, slug, content, date, img_file):
         self.title = title
+        
         self.slug =slug
         self.content =content  
         self.date =date 
         self.img_file =img_file
         self.tagline = tagline
+        
     
 
 
@@ -159,16 +161,17 @@ def edit(sno):
     if ('user' in session and session['user'] == info['user_name']):
         if (request.method == 'POST'):
             box_title = request.form.get('title')
-            box_tagline = request.form.get('tagline')
+            
             box_slug = request.form.get('slug')
             box_content = request.form.get('content')
             date = datetime.now()
             box_image = request.form.get('image')
+            box_tagline = request.form.get('tagline')
 
             
             
             if sno == '0' :
-                post = Posts(title = box_title , slug = box_slug , content = box_content , date = date,  img_file = box_image )
+                post = Posts(title = box_title  ,slug = box_slug , content = box_content , date = date,  img_file = box_image ,tagline = box_tagline  )
                 db.session.add(post)
                 db.session.commit()
 
@@ -179,6 +182,7 @@ def edit(sno):
                 post.content = box_content
                 post.img_file = box_image
                 post.date = date
+                post.tagline = box_tagline
                 db.session.commit()
                 return redirect('/edit/'+sno)
 

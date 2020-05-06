@@ -33,8 +33,7 @@
 
   <!-- <input class="form-control form-control-lg" type="text" id ="image" name ="tagline" placeholder="Tagline" 
 value= "{{post.tagline}}"> -->
-<label><b>Tagline</b></label>
- <textarea rows="2" class="form-control" placeholder="Enter Tagline Here" name="tagline" id="tagline" required data-validation-required-message="Please enter a tagline." >{{post.tagline}}</textarea>
+
 
   <!-- <input class="form-control form-control-lg" type="text" id ="slug" name ="slug" placeholder="SLUG" value = "{{post.slug}}"> -->
   <label><b>Slug</b></label>
@@ -47,7 +46,9 @@ value= "{{post.tagline}}"> -->
 
   <label><b>Image</b></label>
   <input class="form-control form-control-lg" type="text" id ="image" name ="image" placeholder="IMAGE" value = "{{post.img_file}}">
-
+  
+<label><b>Tagline</b></label>
+ <textarea rows="2" class="form-control" placeholder="Enter Tagline Here" name="tagline" id="tagline" required data-validation-required-message="Please enter a tagline." >{{post.tagline}}</textarea>
 <div class="form-group">
     <button type="submit" class="btn btn-primary" id="sendEdit">Sumbit</button>
 
