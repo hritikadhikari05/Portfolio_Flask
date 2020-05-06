@@ -22,7 +22,7 @@ app.secret_key = 'super-secret key'
 #     MAIL_PASSWORD = params['pass']
 # )
 # mail = Mail(app)
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
@@ -78,7 +78,7 @@ class Posts(db.Model):
     img_file = db.Column(db.String(120), nullable=False)
     tagline = db.Column(db.String(200), nullable=False)
 
-    def __init__(self, title, slug, content, date, img_file):
+    def __init__(self, title, slug, content, date, img_file, tagline):
         self.title = title
         
         self.slug =slug
