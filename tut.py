@@ -84,6 +84,7 @@ class Posts(db.Model):
         self.content =content  
         self.date =date 
         self.img_file =img_file
+        self.tagline = tagline
     
 
 
@@ -158,10 +159,12 @@ def edit(sno):
     if ('user' in session and session['user'] == info['user_name']):
         if (request.method == 'POST'):
             box_title = request.form.get('title')
+            box_tagline = request.form.get('tagline')
             box_slug = request.form.get('slug')
             box_content = request.form.get('content')
             date = datetime.now()
             box_image = request.form.get('image')
+
             
             
             if sno == '0' :

@@ -24,19 +24,33 @@
 
 
 <form name="sentMessage" id="Edit" action="/edit/{{sno}}" method= "post" novalidate>
+  <hr>
         
-  <input class="form-control form-control-lg" type="text" id ="title" name ="title" placeholder="Add Title Here" value = "{{post.title}}">
-  <input class="form-control form-control-lg" type="text" id ="slug" name ="slug" placeholder="SLUG" value = "{{post.slug}}">
+ <!--  <input class="form-control form-control-lg" type="text" id ="title" name ="title" placeholder="Add Title Here" value = "{{post.title}}"> -->
+ 
+ <label><b>Title</b></label>
+ <textarea rows="2" class="form-control" placeholder="Enter Title Here" name="title" id="title" required data-validation-required-message="Please enter a title." >{{post.title}}</textarea>
 
-<input class="form-control form-control-lg" type="text" id ="image" name ="content" placeholder="Content" 
-value= "{{post.content}}">
+  <!-- <input class="form-control form-control-lg" type="text" id ="image" name ="tagline" placeholder="Tagline" 
+value= "{{post.tagline}}"> -->
+<label><b>Tagline</b></label>
+ <textarea rows="2" class="form-control" placeholder="Enter Tagline Here" name="tagline" id="tagline" required data-validation-required-message="Please enter a tagline." >{{post.tagline}}</textarea>
+
+  <!-- <input class="form-control form-control-lg" type="text" id ="slug" name ="slug" placeholder="SLUG" value = "{{post.slug}}"> -->
+  <label><b>Slug</b></label>
+ <textarea rows="2" class="form-control" placeholder="Enter Slug Here" name="slug" id="slug" required data-validation-required-message="Please enter a slug." >{{post.slug}}</textarea>
+
+
+<label><b>Content</b></label>
+<textarea rows="9" class="form-control" placeholder="Content" name="content" id="content" required data-validation-required-message="Please enter a message." >{{post.content}}</textarea>
   
 
-
+  <label><b>Image</b></label>
   <input class="form-control form-control-lg" type="text" id ="image" name ="image" placeholder="IMAGE" value = "{{post.img_file}}">
 
 <div class="form-group">
     <button type="submit" class="btn btn-primary" id="sendEdit">Sumbit</button>
+
 </div>
 </form>
 
@@ -51,8 +65,6 @@ value= "{{post.content}}">
         
     
         <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
         </div>
       </div>
     </div>
