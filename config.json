@@ -3,7 +3,7 @@
 {
     "local_server":"False",
     "local_url": "postgresql://postgres:9865103845H@localhost/coding",
-    "prod_url": "postgres://stsubwcfvtvvpr:3f33c67da38182d8b80491aec161582b2f187c82a4da7f130a78aa311b2b3bc4@ec2-35-169-254-43.compute-1.amazonaws.com:5432/decdtf57j11oef",
+    "prod_url": "postgres://qogghtcwitnlve:fcda43e147cec311037aacb6b798939a165f3af943b314ed4d229afac1dbfca1@ec2-52-87-58-157.compute-1.amazonaws.com:5432/df112r8upi8si6",
     "fb_url": "https://www.facebook.com/profile.php?id=100008299360694",
     "twt_url": "http://twitter.com/hritikadhikari3",
     "user": "hritikadhikari05@gmail.com",
