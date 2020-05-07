@@ -2,13 +2,13 @@
 "params":
 {
     "local_server":"False",
-    "local_url": "postgresql://postgres:9865103845H@localhost/coding",
-    "prod_url": "postgres://hwgaykncoixabw:a33e00e67d8c137662c3efbc88198e050806ca6fed047fb5b1306d6b5d191508@ec2-34-194-198-176.compute-1.amazonaws.com:5432/d2an7nvobelk53",
-    "fb_url": "https://www.facebook.com/profile.php?id=100008299360694",
-    "twt_url": "http://twitter.com/hritikadhikari3",
-    "user": "hritikadhikari05@gmail.com",
-    "pass": "9865103845H",
-    "reciever": "hritik.adhikari123@gmail.com",
+    "local_url": "",
+    "prod_url": "",
+    "fb_url": "",
+    "twt_url": "",
+    "user": "",
+    "pass": "",
+    "reciever": "",
     "no_of_posts": "2"
 },
 
@@ -20,8 +20,8 @@
     "sub_heading": "All about my blogs",
     "about_me": "Well, My name is Hritik Adhikari. I am 19years old boy. I am form Nepal. I am a undergraduate student studying in Kathmandu,Nepal. I like desigining Websites.I work on python programming languages. ",
     "img_path": "blog3.svg",
-    "user_name": "hritik",
-    "password": "1234",
+    "user_name": "",
+    "password": "",
     "dashboard_heading": "Welcome Boss",
     "dashboard_subheading": "You Can Add/Edit/Delete Posts Here",
     "edit_heading": "You Can Edit Posts Here",
